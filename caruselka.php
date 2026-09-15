@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Plugin Name: Мой Первый Текстовый Плагин
- * Description: Автоматически добавляет важный блок в конец каждого поста.
- * Version: 1.0
+ * Plugin Name: My Dev Plugin
+ * Description: Auto adds text to the end of the article.
+ * Version: Alfa-Test 1.0
  * Author: IVAN
  * License: GPL2
  */
