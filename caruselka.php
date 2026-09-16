@@ -18,7 +18,9 @@ function caruselka_enqueue_styles() {
 
 
 function my_first_plugin_thanks( $content ) {
-    $custom_text = '<p class="caruselka-css-text">⚡ Thank You</p>';
-    return $content . $custom_text;
+    $custom_text_one = '<p class="caruselka-css-text">⚡ Hello! </p>';
+    $custom_text_two = '<p class="caruselka-css-text">⚡ Thank You</p>';
+    
+    return $custom_text_one . $content . $custom_text_two;
 }
 add_filter( 'the_content', 'my_first_plugin_thanks' );
