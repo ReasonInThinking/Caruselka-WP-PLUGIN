@@ -3,3 +3,9 @@
   font-size: 19px;
   padding: 20px;
 }
+.wp-block-image {
+  width: 80%;
+  margin: 50px auto;
+  box-shadow: 0 5px 5px 10px #aeaeae30;
+  
+}

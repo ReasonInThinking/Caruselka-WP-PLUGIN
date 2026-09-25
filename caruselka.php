@@ -20,12 +20,12 @@ function my_plugin_shortcode_caruselka() {
 
 
 function caruselka_enqueue_styles() {
-  wp_enqueue_style('caruselka-style', plugin_dir_url( __FILE__ ) . 'style.css');
+  wp_enqueue_style('test-style', plugin_dir_url( __FILE__ ) . 'style.css');
 } add_action('wp_enqueue_scripts', 'caruselka_enqueue_styles' );
 
 
 function my_first_plugin_thanks( $content ) {
-    $custom_text_one = '<p class="caruselka-css-text">⚡ Hello! </p>';
+    $custom_text_one = '<div class="wp-block-image"><img src="' . plugin_dir_url( __FILE__ ) . 'elephant.jpeg" alt="Elephant"></div>';
     $custom_text_two = '<p class="caruselka-css-text">⚡ Thank You</p>';
 
     return $custom_text_one . $content . $custom_text_two;
