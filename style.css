@@ -3,9 +3,16 @@
   font-size: 19px;
   padding: 20px;
 }
+
 .wp-block-image {
   width: 80%;
   margin: 50px auto;
   box-shadow: 0 5px 5px 10px #aeaeae30;
-  
+
+}
+
+mark {
+  background-color: rgb(44, 113, 200) !important;
+  color: white !important;
+  border-radius: 5px;
 }

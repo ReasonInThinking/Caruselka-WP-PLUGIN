@@ -17,7 +17,9 @@ function my_plugin_shortcode_caruselka() {
   return '<p style="color: red;">This Simple ShortCode Text</p>';
 } add_shortcode('my_special_box', 'my_plugin_shortcode_caruselka');
 
-
+function my_two_shortcode_caruselka($attr, $content = null) {
+  return '<mark>' . $content . '</mark>';
+} add_shortcode('two_shortcode', 'my_two_shortcode_caruselka');
 
 function caruselka_enqueue_styles() {
   wp_enqueue_style('test-style', plugin_dir_url( __FILE__ ) . 'style.css');
