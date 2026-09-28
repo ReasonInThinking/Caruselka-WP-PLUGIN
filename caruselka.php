@@ -12,6 +12,24 @@ if(!defined('ABSPATH')) {
   exit;
 }
 
+function my_html_box_shortcode($atts, $content = null) {
+  ob_start();
+  ?>
+<form method="post" action="">
+<input type="text" name="user_name" value="">
+<input type="submit" value="Send" name="my_btn">
+</form>
+<?php
+return ob_get_clean();
+} add_shortcode('html_box', 'my_html_box_shortcode');
+
+function my_form_listener() {
+  if(isset($_POST['my_btn'])) {
+    wp_die( 'The form works!' );
+  }
+} add_action('init', 'my_form_listener');
+
+
 
 function my_plugin_shortcode_caruselka() {
   return '<p style="color: red;">This Simple ShortCode Text</p>';
