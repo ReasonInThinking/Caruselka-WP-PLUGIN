@@ -16,7 +16,7 @@ function my_html_box_shortcode($atts, $content = null) {
   ob_start();
   ?>
 <form method="post" action="">
-<input type="text" name="user_name" value="">
+<input type="text" name="user_name" placeholder="your Name">
 <input type="submit" value="Send" name="my_btn">
 </form>
 <?php
@@ -25,7 +25,12 @@ return ob_get_clean();
 
 function my_form_listener() {
   if(isset($_POST['my_btn'])) {
-    wp_die( 'The form works!' );
+    $save_name = sanitize_text_field( $_POST['user_name']);
+
+    $redirect_url = add_query_arg( 'p', '9', $referer_url );
+    wp_redirect( $redirect_url );
+    exit;
+
   }
 } add_action('init', 'my_form_listener');
 
