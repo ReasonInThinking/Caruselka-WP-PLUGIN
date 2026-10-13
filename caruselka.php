@@ -68,6 +68,34 @@ function my_form_listener() {
 add_action('init', 'my_form_listener');
 
 
+function my_plagin_on_deactivation() {
+
+  update_option('my_plagin_status', 'disabled');
+} register_deactivation_hook( __FILE__, 'my_plagin_on_deactivation' );
+
+
+function haracter($setting) {
+  // Устанавливаем массив по дефолту
+  $defaults = array(
+    'a' => '40px',
+    'b' => 'orange',
+    'c' => 'Simple TEXT )'
+  );
+  // Даем возможность пробросить свои значения
+  $attributes = shortcode_atts($defaults, $setting);
+
+  // Возвращаем дефолт ключи через шорткод
+  return '<p style="font-size: ' . $attributes['a'] . ';' . 'color: ' . $attributes['b'] . ';">' .  $attributes['c'] . '</p>';
+} add_shortcode('box', 'haracter');
+
+// Можно указать свои значения
+// [box a="25px" b="blue" c="Привет, Пользователь!"]
+
+
+
+
+
+
 
 
 
